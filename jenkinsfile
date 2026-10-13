@@ -12,10 +12,12 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Running Python tests'
-                 bat '"C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" --version'
-                 bat '"C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m unittest discover -s . -p "test_*.py" -v'                
-            }
+        echo 'Checking Python installation'
+        bat '"C:\\Python313\\python.exe" --version'
+
+        echo 'Running Python tests'
+        bat '"C:\\Python313\\python.exe" -m unittest'
+    }
         }
     }
 
